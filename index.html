@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RACO Child and Rural Care Initiative — Light City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dusk: #0f1b30;
+    --dusk-card: #182a47;
+    --gold: #f2a93b;
+    --gold-soft: #ffd68a;
+    --green: #2d6a4f;
+    --whatsapp: #25d366;
+    --cream: #fbf5ea;
+    --ink: #12182a;
+    --muted: #5a6478;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+  /* HEADER & HERO */
+  .hero {
+    background: linear-gradient(180deg, var(--dusk) 0%, var(--dusk-card) 100%);
+    color: var(--cream);
+    padding: 1.5rem 5vw 3.5rem;
+  }
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; }
+  .brand-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 2px; }
+  
+  .btn { padding: 0.75rem 1.4rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer; border: none; transition: 0.2s; }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+  .btn-wa { background: var(--whatsapp); color: #fff; }
+  .btn-wa:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .hero-content { max-width: 700px; }
+  .hero-content h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); line-height: 1.1; margin-bottom: 1rem; }
+  .hero-content h1 em { color: var(--gold-soft); font-style: italic; }
+  .hero-content p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 1.8rem; }
+
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: var(--gold); display: block; margin-bottom: 0.4rem; }
+
+  section { padding: 4rem 5vw; }
+
+  /* MISSION SECTION */
+  .mission { background: var(--dusk); color: var(--cream); text-align: center; }
+  .mission-inner { max-width: 950px; margin: 0 auto; }
+  .mission h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem; }
+  .mission p { opacity: 0.85; font-size: 1.05rem; }
+
+  /* PHOTO FLYER BANNER */
+  .flyer-section { background: var(--dusk-card); padding: 3rem 5vw; text-align: center; }
+  .flyer-container { max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 1px solid rgba(242,169,59,0.3); background: #223a5e; }
+  .flyer-container img { width: 100%; height: auto; }
+
+  /* GALLERY GRID */
+  .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; max-width: 1000px; margin: 2.5rem auto 0; }
+  .photo-card { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; background: var(--dusk-card); border: 1px solid rgba(255,255,255,0.1); }
+  .photo-card img { width: 100%; height: 100%; }
+
+  /* 6 CORE INITIATIVES */
+  .initiatives { background: var(--cream); }
+  .section-head { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+  .section-head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .box-card {
+    background: var(--white);
+    border: 1px solid rgba(18,24,42,0.08);
+    border-radius: 10px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+  }
+  .box-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .box-num { font-family: 'Fraunces', serif; color: var(--gold); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .box-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; color: var(--ink); }
+  .box-card p { font-size: 0.9rem; color: var(--muted); }
+
+  /* CONTACT & MAP SECTION */
+  .contact-section { background: var(--white); }
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .contact-form form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+  .contact-form input, .contact-form textarea {
+    padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 0.9rem;
+  }
+  .address-box { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .address-box strong { color: var(--ink); }
+
+  .social-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.2rem; }
+  .btn-social {
+    padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid rgba(0,0,0,0.1);
+    background: #f4f6f8; color: var(--ink); transition: 0.2s;
+  }
+  .btn-social:hover { background: #e2e7ec; transform: translateY(-2px); }
+
+  .map-container { border-radius: 10px; overflow: hidden; min-height: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+  /* TWO-SECTION DONATION MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(15,27,48,0.88);
+    backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: 0.3s; z-index: 1000; padding: 1rem;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-card {
+    background: var(--dusk-card); color: var(--cream);
+    padding: 2rem; border-radius: 12px; border: 1px solid var(--gold);
+    max-width: 650px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;
+  }
+  .close-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--cream); font-size: 1.8rem; cursor: pointer; }
+
+  /* DONATION TABS */
+  .donate-tabs { display: flex; gap: 0.5rem; margin: 1.2rem 0; border-bottom: 1px solid rgba(251,245,234,0.15); padding-bottom: 0.5rem; }
+  .tab-btn {
+    flex: 1; padding: 0.7rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(242,169,59,0.3);
+    color: var(--cream); font-weight: 700; border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+  }
+  .tab-btn.active { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+  .tab-content { display: none; margin-top: 1rem; text-align: left; }
+  .tab-content.active { display: block; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 1rem 0; }
+  .stat-item { background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 6px; border-left: 3px solid var(--gold); }
+  .stat-item .num { font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--gold-soft); font-weight: 700; }
+  .stat-item .lbl { font-size: 0.75rem; opacity: 0.8; }
+
+  .tier-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; margin: 1rem 0; }
+  .tier-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(242,169,59,0.3); padding: 1rem 0.5rem; text-align: center; border-radius: 6px; }
+  .tier-card .amt { font-size: 1.2rem; font-weight: 800; color: var(--gold-soft); }
+  .tier-card .dur { font-size: 0.75rem; opacity: 0.8; }
+
+  .bank-details { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; font-size: 0.82rem; margin-top: 1rem; border: 1px dashed rgba(242,169,59,0.4); line-height: 1.6; }
+  .bank-details strong { color: var(--gold-soft); }
+
+  footer { background: var(--ink); color: rgba(251,245,234,0.5); text-align: center; padding: 2rem; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="nav-bar">
+    <div class="brand"><div class="brand-dot"></div> RACO Initiative</div>
+    <button class="btn btn-gold" onclick="toggleModal('back2school')">Donate Now</button>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">Light City · Ibeju-Lekki &amp; Ijebu Ode</span>
+    <h1>Every child deserves <em>a house with the lights on.</em></h1>
+    <p>A faith-based home restoring hope, providing free education, shelter, and medical care to vulnerable children and rural communities.</p>
+    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+      <button class="btn btn-gold" onclick="toggleModal('back2school')">Back 2 School Initiative</button>
+      <button class="btn btn-gold" style="background:var(--green); color:var(--cream);" onclick="toggleModal('feed')">Feed A Child</button>
+    </div>
+  </div>
+</header>
+
+<!-- OFFICIAL FLYER SECTION -->
+<section class="flyer-section">
+  <span class="eyebrow">Official Campaign Flyer</span>
+  <h2 style="color:var(--cream); margin-bottom:1.5rem;">Support RACO Orphanage Back 2 School Initiative</h2>
+  <div class="flyer-container">
+    <img src="https://wsrv.nl/?url=https://i.ibb.co/1GyzkL59/IMG-20260801-093332-2.jpg" alt="Back 2 School Campaign Flyer" referrerpolicy="no-referrer">
+  </div>
+</section>
+
+<section class="mission">
+  <div class="mission-inner">
+    <span class="eyebrow">Our Mission</span>
+    <h2>Nurture the Vulnerable. Educate the Next Generation.</h2>
+    <p>Since 2003, RACO Initiative has been dedicated to lifting orphaned children out of poverty, restoring dignity to widows, and delivering direct healthcare to underserved rural communities.</p>
+    
+    <!-- PHOTO GALLERY GRID (6 IMAGES) -->
+    <div class="photo-grid">
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/TxpLH8jf/b7725522762c4b8eb21e6c7d559e7c14.jpg" alt="RACO Children Gathering" referrerpolicy="no-referrer"></div>
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/1tN3q5MX/IMG-20251115-150219.jpg" alt="RACO Community Support" referrerpolicy="no-referrer"></div>
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/hx0ZKGN3/IMG-20251113-073847-2.jpg" alt="Students Assembly" referrerpolicy="no-referrer"></div>
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/W46RmRvJ/IMG-20251208-073335.jpg" alt="School Activities" referrerpolicy="no-referrer"></div>
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/DfQ3b8wD/IMG-20251208-073629.jpg" alt="Classroom Scholars" referrerpolicy="no-referrer"></div>
+      <div class="photo-card"><img src="https://wsrv.nl/?url=https://i.ibb.co/mVHcgm5B/IMG-20251208-073637.jpg" alt="RACO Outreach" referrerpolicy="no-referrer"></div>
+    </div>
+  </div>
+</section>
+
+<section class="initiatives">
+  <div class="section-head">
+    <span class="eyebrow" style="color:var(--muted);">What We Do</span>
+    <h2>Our 6 Core Pillars</h2>
+  </div>
+  
+  <div class="grid-6">
+    <div class="box-card">
+      <div class="box-num">01</div>
+      <h3>Orphanage &amp; Shelter</h3>
+      <p>Providing a safe home, nutritious daily meals, emotional support, and parental care to orphaned and vulnerable children.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-num">02</div>
+      <h3>100% Free Primary Education</h3>
+      <p>Operating tuition-free nursery and primary education complete with free uniforms, books, school bags, and daily lunches.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-num">03</div>
+      <h3>Widows Empowerment</h3>
+      <p>Equipping rural widows with vocational training, trade tools, and micro-grants to build independent, sustainable incomes.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-num">04</div>
+      <h3>Rural Health Clinics</h3>
+      <p>Organizing free medical outreaches, health checkups, and prescription distribution for communities lacking basic health access.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-num">05</div>
+      <h3>Back-To-School Sponsorships</h3>
+      <p>Sponsoring school bags, writing materials, instructional media, and settling school bills across primary, secondary, and tertiary levels.</p>
+    </div>
+    <div class="box-card">
+      <div class="box-num">06</div>
+      <h3>Community Development</h3>
+      <p>Building sustainable clean water systems and basic infrastructure improvements across remote rural villages.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-wrap">
+    <div class="contact-form">
+      <span class="eyebrow" style="color:var(--muted);">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p style="color:var(--muted); font-size:0.9rem;">Fill out the form below to message us directly on WhatsApp:</p>
+      
+      <!-- WHATSAPP AUTO-REDIRECT FORM -->
+      <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="custName" placeholder="Your Full Name" required>
+        <input type="tel" id="custPhone" placeholder="Your Phone Number" required>
+        <input type="email" id="custEmail" placeholder="Your Email Address (Optional)">
+        <textarea id="custMsg" rows="3" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-wa" style="width: 100%;">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Send Message via WhatsApp
+        </button>
+      </form>
+
+      <div class="address-box">
+        <p><strong>Executive Supervisor &amp; Administrator:</strong> Elizabeth Adesoye - Daniel (Mrs)</p>
+        <p><strong>Phone:</strong> 08022628461, 08033032434 | 07045657230 | 07080004902</p>
+        <p><strong>Website:</strong> <a href="https://www.racochildinitiative.org" target="_blank" style="text-decoration:underline;">www.racochildinitiative.org</a></p>
+        
+        <div class="social-links">
+          <a href="https://share.google/0qPq5lA4kGA8L9l4x" target="_blank" class="btn-social">
+            📍 Google Business Profile
+          </a>
+          <a href="https://www.facebook.com/racochildcareng" target="_blank" class="btn-social">
+            🌐 Facebook Page
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow" style="color:var(--muted);">Locations</span>
+      <h2>Our Homes &amp; Centers</h2>
+      <div style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem; line-height:1.6;">
+        <p style="margin-bottom:0.5rem;">📍 <strong>Mission Control Tower (HERITAGE HOUSE):</strong> Light City, Itawo, Itamapako, Off Oduagboju B/S, Along Ijebu Ode/Epe Exp., by Toll Gate, Ijebu Ode LGA, Ogun State.</p>
+        <p>📍 <strong>Ibeju Orphanage &amp; School:</strong> LIGHT HOUSE, 33, Taiwo Adebambo Str, Ibeju Agbe, Ibeju-Lekki LGA, Lagos State.</p>
+      </div>
+      
+      <div class="map-container" style="display:flex; flex-direction:column; background:#182a47; padding:1.2rem; border-radius:10px; color:#fff; text-align:center; gap:1rem;">
+  
+  <!-- DIRECT LINK BUTTON IF EMBED FAILS TO LOAD -->
+  <div style="background: rgba(255,255,255,0.08); padding: 1rem; border-radius: 8px; border: 1px solid rgba(242,169,59,0.4);">
+    <p style="font-size: 0.85rem; margin-bottom: 0.6rem; opacity: 0.9;">Map not loading properly?</p>
+    <a href="https://maps.app.goo.gl/bwChA6i6NbZw2ukWA" target="_blank" class="btn btn-gold" style="display:inline-flex; align-items:center; gap:0.5rem; text-decoration:none; padding:0.6rem 1.2rem; font-size:0.85rem;">
+      📍 Click Here to Open Location in Google Maps
+    </a>
+  </div>
+
+  <!-- EMBEDDED MAP -->
+  <iframe 
+    src="https://maps.google.com/maps?q=RACO%20Child%20and%20Rural%20Care%20Initiative%20Ibeju%20Lekki&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+    width="100%" 
+    height="250" 
+    style="border:0; border-radius:8px;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 2-SECTION DONATION MODAL -->
+<div class="modal-overlay" id="donateModal">
+  <div class="modal-card">
+    <button class="close-btn" onclick="toggleModal()">&times;</button>
+    <span class="eyebrow">Support RACO Initiative</span>
+    <h2>Choose How You'd Like to Help</h2>
+
+    <div class="donate-tabs">
+      <button class="tab-btn active" id="tab-back2school" onclick="switchTab('back2school')">🎒 Back 2 School</button>
+      <button class="tab-btn" id="tab-feed" onclick="switchTab('feed')">🍲 Feed A Child</button>
+    </div>
+
+    <!-- SECTION 1: BACK 2 SCHOOL -->
+    <div class="tab-content active" id="content-back2school">
+      <p style="font-size:0.85rem; opacity:0.9;">Help us settle school bills, provide school bags, writing materials, and instructional media for our scholars across all academic tiers.</p>
+      
+      <div class="stats-grid">
+        <div class="stat-item"><div class="num">400+</div><div class="lbl">Primary School Students</div></div>
+        <div class="stat-item"><div class="num">150+</div><div class="lbl">Secondary (Day &amp; Boarding)</div></div>
+        <div class="stat-item"><div class="num">34</div><div class="lbl">University Undergraduates</div></div>
+        <div class="stat-item"><div class="num">8</div><div class="lbl">JAMB Scholars (Cut-Off Passed)</div></div>
+      </div>
+
+      <div class="bank-details">
+        <p><strong>Guaranty Trust Bank PLC (GTBank)</strong></p>
+        <p>• NGN Account: <strong>0013429462</strong></p>
+        <p>• USD ($) Account: <strong>0013429486</strong> | EUR (€): <strong>0013429503</strong> | GBP (£): <strong>0013429493</strong></p>
+        <p>• Bank Code: <strong>058-152272</strong> | SWIFT: <strong>GTBINGNLAIFP</strong></p>
+        <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:0.5rem 0;">
+        <p>• FCMB: <strong>4668537042</strong> | Polaris Bank: <strong>1770634650</strong></p>
+        <p>• Account Name: <strong>RACO CHILD AND RURAL CARE INITIATIVE</strong></p>
+      </div>
+    </div>
+
+    <!-- SECTION 2: FEED A CHILD -->
+    <div class="tab-content" id="content-feed">
+      <p style="font-size:0.85rem; opacity:0.9;">Ensure an orphaned or vulnerable child receives nutritious daily meals every single day.</p>
+      
+      <div class="tier-cards">
+        <div class="tier-card"><div class="amt">₦1,500</div><div class="dur">Per Day</div></div>
+        <div class="tier-card"><div class="amt">₦5,000</div><div class="dur">Per Week</div></div>
+        <div class="tier-card"><div class="amt">₦20,000</div><div class="dur">Per Month</div></div>
+      </div>
+
+      <div class="bank-details">
+        <p><strong>Account Name:</strong> RACO CHILD AND RURAL CARE INITIATIVE</p>
+        <p>• GTBank (NGN): <strong>0013429462</strong></p>
+        <p>• FCMB: <strong>4668537042</strong></p>
+        <p>• Polaris Bank: <strong>1770634650</strong></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>OUR GREAT GOD IS WORKING — Touching Lives, Building Hope Everyday.</p>
+  <p style="font-size:0.75rem; margin-top:0.3rem;">&copy; 2026 RACO Child and Rural Care Initiative. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function toggleModal(section) {
+    const modal = document.getElementById('donateModal');
+    modal.classList.toggle('active');
+    if (section) {
+      switchTab(section);
+    }
+  }
+
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('content-' + tab).classList.add('active');
+  }
+
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const name = encodeURIComponent(document.getElementById('custName').value);
+    const phone = encodeURIComponent(document.getElementById('custPhone').value);
+    const email = encodeURIComponent(document.getElementById('custEmail').value || 'Not provided');
+    const msg = encodeURIComponent(document.getElementById('custMsg').value);
+    
+    const text = `*New Website Inquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Message:* ${msg}`;
+    window.open(`https://wa.me/2349060562048?text=${text}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
