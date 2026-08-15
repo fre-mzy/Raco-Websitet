@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mrs. Elizabeth Adesoye Daniel! — RACO Initiative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --dusk: #0f1b30;
+    --dusk-card: #182a47;
+    --gold: #f2a93b;
+    --gold-soft: #ffd68a;
+    --green: #2d6a4f;
+    --cream: #fbf5ea;
+    --ink: #12182a;
+    --muted: #5a6478;
+    --white: #ffffff;
+    --rose: #e63946;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
+  a { color: inherit; text-decoration: none; }
+
+  /* HEADER & NAVIGATION */
+  .header-nav {
+    background: var(--dusk);
+    color: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid rgba(242,169,59,0.2);
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { display: flex; align-items: center; gap: 0.6rem; font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700; }
+  .brand-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 2px; }
+  
+  .nav-links { display: flex; gap: 1rem; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.85rem; font-weight: 600; opacity: 0.85; transition: 0.2s; padding: 0.3rem 0.5rem; border-radius: 4px; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); opacity: 1; }
+  .nav-toggle { display: none; background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer; }
+
+  .btn { padding: 0.65rem 1.25rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer; border: none; transition: 0.2s; }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+
+  /* TODAY BANNER */
+  .today-banner {
+    background: linear-gradient(90deg, #e63946, #f2a93b);
+    color: var(--white);
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* HERO CELEBRATION */
+  .hero-section { background: var(--dusk); color: var(--cream); padding: 4rem 5vw 3.5rem; text-align: center; }
+  .eyebrow { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 800; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+  .hero-section h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 0.8rem; line-height: 1.2; }
+  .hero-section p { max-width: 750px; margin: 0 auto; opacity: 0.9; font-size: 1.1rem; }
+
+  section { padding: 3.5rem 5vw; max-width: 1100px; margin: 0 auto; }
+
+  /* FEATURED TRIBUTE PROFILE */
+  .tribute-profile {
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid rgba(18,24,42,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+    margin-bottom: 3.5rem;
+  }
+  
+  .tribute-img-container {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .tribute-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .tribute-img-container:hover .tribute-img { transform: scale(1.03); }
+
+  .tribute-body { padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+  .tribute-body h2 { font-size: 2.2rem; color: var(--dusk); margin-bottom: 0.4rem; }
+  .tribute-role { font-size: 0.9rem; font-weight: 800; color: var(--green); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.2rem; display: block; }
+  .tribute-body p { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+
+  /* COUPLE / VISIONARY SECTION */
+  .visionary-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(18,24,42,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    margin-bottom: 3.5rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .visionary-img-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .visionary-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .visionary-img-container:hover .visionary-img { transform: scale(1.03); }
+
+  .visionary-info h3 { font-size: 1.8rem; color: var(--dusk); margin-bottom: 0.5rem; }
+  .visionary-info span { font-size: 0.85rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 1rem; }
+
+  /* PHOTO GALLERY GRID */
+  .gallery-header { text-align: center; margin-bottom: 2rem; }
+  .gallery-header h2 { font-size: 2rem; color: var(--dusk); }
+  .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+  
+  .photo-card {
+    background: var(--dusk-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(18,24,42,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    height: 320px;
+    cursor: pointer;
+  }
+  .photo-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .photo-card:hover img { transform: scale(1.05); }
+
+  /* LIGHTBOX POPUP MODAL */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 27, 48, 0.94);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+  }
+  .lightbox.active { display: flex; }
+  .lightbox-content {
+    max-width: 92vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: var(--gold);
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+  }
+
+  /* WISHES & PRAYERS WALL */
+  .wishes-header { text-align: center; margin-bottom: 2rem; }
+  .wishes-header h2 { font-size: 2rem; color: var(--dusk); }
+  .wishes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem; }
+  
+  .wish-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid var(--gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  }
+  .wish-card p { font-size: 1rem; color: var(--ink); line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+  .wish-author { font-weight: 700; font-size: 0.85rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* BLESSINGS BANNER */
+  .blessings-box {
+    background: var(--dusk-card);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(242,169,59,0.3);
+    text-align: center;
+  }
+  .blessings-box h3 { font-size: 1.8rem; color: var(--gold-soft); margin-bottom: 1rem; }
+  .blessings-box p { font-size: 1.1rem; line-height: 1.7; max-width: 800px; margin: 0 auto 1.5rem; opacity: 0.95; }
+
+  footer { background: var(--ink); color: rgba(251,245,234,0.5); text-align: center; padding: 2.5rem 5vw; font-size: 0.85rem; }
+
+  @media (max-width: 850px) {
+    .nav-toggle { display: block; }
+    .nav-links { display: none; width: 100%; flex-direction: column; position: absolute; top: 100%; left: 0; background: var(--dusk); padding: 1.5rem 5vw; border-bottom: 1px solid rgba(242,169,59,0.2); }
+    .nav-links.show { display: flex; }
+    .tribute-profile { grid-template-columns: 1fr; }
+    .tribute-img-container { height: 380px; }
+    .visionary-box { grid-template-columns: 1fr; }
+    .visionary-img-container { height: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="today-banner">
+  🎂 Today is a Special Day! Happy Birthday to Mrs. Elizabeth Adesoye Daniel! 🎂
+</div>
+
+<nav class="header-nav">
+  <div class="nav-container">
+    <a href="index.html" class="brand"><div class="brand-dot"></div> RACO Initiative</a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mission.html">Mission</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="scholars.html">Scholars</a></li>
+      <li><a href="board.html">Trustees</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="expenses.html">Expenses</a></li>
+    </ul>
+    <a href="donate.html" class="btn btn-gold">Donate</a>
+  </div>
+</nav>
+
+<header class="hero-section">
+  <span class="eyebrow">🎉 Birthday Tribute</span>
+  <h1>Happy Birthday, Mrs. Elizabeth Adesoye Daniel</h1>
+  <p>Honoring our Executive Supervisor &amp; Home Coordinator—a woman of grace, compassion, and divine purpose, and a loving mother to all children at RACO Child Orphanage.</p>
+</header>
+
+<section>
+  <!-- MAIN TRIBUTE SECTION -->
+  <div class="tribute-profile">
+    <div class="tribute-img-container" onclick="openLightbox('https://i.ibb.co/C38Wcnth/IMG-20260814-WA0027.jpg')">
+      <img src="https://i.ibb.co/C38Wcnth/IMG-20260814-WA0027.jpg" alt="Mrs. Elizabeth Adesoye Daniel" class="tribute-img">
+    </div>
+    <div class="tribute-body">
+      <h2>Celebrating Mrs. Elizabeth Adesoye Daniel</h2>
+      <span class="tribute-role">Executive Supervisor &amp; Home Coordinator</span>
+      <p>Today, the entire family of RACO Child and Rural Care Initiative gathers in joy and thanksgiving to celebrate a remarkable woman of faith, resilience, and boundless love: <strong>Mrs. Elizabeth Adesoye Daniel</strong>.</p>
+      <p>In her pivotal role as Executive Supervisor and Home Coordinator, her daily touch nurtures every child under our care. Her dedication ensures that our home remains a beacon of hope, restoration, and light across rural communities.</p>
+    </div>
+  </div>
+
+  <!-- THE VISIONARY & PARTNER SECTION -->
+  <div class="visionary-box">
+    <div class="visionary-img-container" onclick="openLightbox('https://i.ibb.co/mFcyt9k4/IMG-20260814-WA0028.jpg')">
+      <img src="https://i.ibb.co/mFcyt9k4/IMG-20260814-WA0028.jpg" alt="The Visionary of RACO Initiative" class="visionary-img">
+    </div>
+    <div class="visionary-info">
+      <span class="eyebrow">United in Mission</span>
+      <h3>Standing Alongside Our Visionary</h3>
+      <span>Visionary &amp; Founder — RACO Initiative</span>
+      <p>Together with her husband, the Visionary of RACO Initiative, Mrs. Elizabeth Adesoye Daniel leads with unified faith and unwavering devotion. Their joint vision continues to touch thousands of young lives and bring transformation to rural families.</p>
+    </div>
+  </div>
+
+  <!-- PHOTO GALLERY -->
+  <div class="gallery-header">
+    <span class="eyebrow">Moments of Joy (Click to Enlarge)</span>
+    <h2>Celebration Gallery</h2>
+  </div>
+  <div class="photo-grid">
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/KcMYMH8g/41bdf674d1174fe19b703fcbccb1b689.jpg')">
+      <img src="https://i.ibb.co/KcMYMH8g/41bdf674d1174fe19b703fcbccb1b689.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/gLZ5ZYG2/47c70694a2994938ac9471bc474f63aa.jpg')">
+      <img src="https://i.ibb.co/gLZ5ZYG2/47c70694a2994938ac9471bc474f63aa.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/4wpcQMQ2/667adc9efe34476998f12b7fb45a2551.jpg')">
+      <img src="https://i.ibb.co/4wpcQMQ2/667adc9efe34476998f12b7fb45a2551.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/27K9xHkj/6a4966d6c3b448e9963538cd81922f8a.jpg')">
+      <img src="https://i.ibb.co/27K9xHkj/6a4966d6c3b448e9963538cd81922f8a.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/fdkf2FrG/b90d831db93148018a0916ba207277b0.jpg')">
+      <img src="https://i.ibb.co/fdkf2FrG/b90d831db93148018a0916ba207277b0.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/dJKcW8tt/IMG-20260814-WA0032.jpg')">
+      <img src="https://i.ibb.co/dJKcW8tt/IMG-20260814-WA0032.jpg" alt="Celebration photo">
+    </div>
+    <div class="photo-card" onclick="openLightbox('https://i.ibb.co/FqWXYP58/IMG-20251116-174532-2.jpg')">
+      <img src="https://i.ibb.co/FqWXYP58/IMG-20251116-174532-2.jpg" alt="Celebration photo">
+    </div>
+  </div>
+
+  <!-- WISHES & PRAYERS WALL -->
+  <div class="wishes-header">
+    <span class="eyebrow">Heartfelt Tributes</span>
+    <h2>Birthday Wishes &amp; Prayers</h2>
+  </div>
+  <div class="wishes-grid">
+    <div class="wish-card">
+      <p>“Happy Birthday to our dearest mother, Mrs. Elizabeth Adesoye Daniel! Thank you for your endless love, kindness, and continuous care for every child at RACO Child Orphanage.”</p>
+      <div class="wish-author">— From All RACO Scholars &amp; Children</div>
+    </div>
+    <div class="wish-card">
+      <p>“May Almighty God reward your labor of love with long life, good health, peace, and overflowing joy in this new chapter of your life!”</p>
+      <div class="wish-author">— Board of Trustees &amp; Management</div>
+    </div>
+    <div class="wish-card">
+      <p>“Wishing a glorious birthday to an extraordinary leader. May your wisdom, grace, and impact continue to flourish abundantly!”</p>
+      <div class="wish-author">— Friends, Partners &amp; Ambassadors of RACO</div>
+    </div>
+  </div>
+
+  <!-- BLESSINGS BANNER -->
+  <div class="blessings-box">
+    <span class="eyebrow">Our Prayer Today</span>
+    <h3>Divine Health, Joy &amp; Unfailing Grace</h3>
+    <p>May God crown your new year with peace, overflowing blessings, and divine strength as you continue touching lives and building hope every single day!</p>
+    <a href="index.html" class="btn btn-gold">&larr; Back to Home</a>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL CONTAINER -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged photo">
+</div>
+
+<footer>
+  <p>OUR GREAT GOD IS WORKING — Touching Lives, Building Hope Everyday.</p>
+  <p style="font-size:0.75rem; margin-top:0.3rem;">&copy; 2026 RACO Child and Rural Care Initiative. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
+
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
